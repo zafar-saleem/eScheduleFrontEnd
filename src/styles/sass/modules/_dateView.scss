@@ -1,36 +1,51 @@
 .m-dateview {
+    position: relative;
     width: 60%;
-    margin: 0 auto;
+    height: 100%;
+    border-radius: 50px;
+    padding: 20px;
+    width: 58px;
+    z-index: 1;
+    background-color: #314a72;
+
+    .linker {
+        position: absolute;
+        height: 88%;
+        top: 41px;
+        left: 49px;
+        z-index: -1;
+        border-left: 1px solid #FFFFFF;
+    }
 
     .m-dates {
-        width: 92px;
-        padding: 5px;
-        margin-bottom: 10px;
-        border: 1px solid #4169E1;
-        border-radius: 50px;
+        margin-bottom: 20px;
 
         a {
             display: block;
-            padding: 25px 14px;
-            width: 60px;
-            color: #333;
+            color: #FFFFFF;
+            padding: 10px;
             text-decoration: none;
-            border: 2px solid #4169E1;
+            font-size: 11px;
+            box-shadow: 0 0 5px #335072;
+            background-color: #405e80;
             border-radius: 50px;
+
+            .day {
+                margin-left: 13px;
+            }
 
             .month {
                 display: inline-block;
-                margin-left: 5px;
+                margin-left: 10px;
             }
 
             .year {
                 display: block;
-                margin-left: 12px;
+                margin-left: 7px;
             }
 
             &.active {
-                color: #FFFFFF;
-                background-color: #4169FF;
+                background-color: #f8c255;
             }
         }
     }

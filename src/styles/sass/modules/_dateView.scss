@@ -14,7 +14,6 @@
             padding: 25px 14px;
             width: 60px;
             color: #333;
-//            margin-bottom: 20px;
             text-decoration: none;
             border: 2px solid #4169E1;
             border-radius: 50px;
@@ -27,6 +26,11 @@
             .year {
                 display: block;
                 margin-left: 12px;
+            }
+
+            &.active {
+                color: #FFFFFF;
+                background-color: #4169FF;
             }
         }
     }

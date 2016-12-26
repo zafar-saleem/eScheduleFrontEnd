@@ -1,33 +1,27 @@
 import $ from 'jquery';
 import _ from 'lodash';
 
-// import DateTemplate from '../../templates/DateTemplate.html';
+import TimeTemplate from '../../templates/TimeTemplate.html';
 
 let _model, $els;
-// let dateTemplate = _.template(DateTemplate);
+let timeTemplate = _.template(TimeTemplate);
 
 const TimeView = {
     init: (model) => {
         _model = model;
 
+        window.Vents.listenEvent('dateSelected', callback);
         render();
-
-        $('body').on('click', '.a-date', onDateClickHandler.bind(this));
     }
 };
 
 function render() {
     console.log(_model.get());
-    // $('.wrapper').html(dateTemplate({ data: _model.get() }));
+    $('.wrapper').append(timeTemplate({ data: _model.get() }));
 }
 
-function onDateClickHandler(e) {
-    let el = $(e.target);
-
-    $('.a-date').removeClass('active');
-    el.addClass('active');
-
-    e.preventDefault();
+function callback() {
+    console.log('CALLBACK');
 }
 
 module.exports = TimeView;

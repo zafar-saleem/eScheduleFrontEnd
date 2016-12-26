@@ -1,6 +1,8 @@
 import $ from 'jquery';
 import _ from 'lodash';
 
+import DatesView from './DatesView';
+
 import DateTemplate from '../../templates/DateTemplate.html';
 
 let _model, $els;
@@ -11,14 +13,13 @@ const DateView = {
         _model = model;
 
         render();
-
-        $('body').on('click', '.a-date', onDateClickHandler.bind(this));
     }
 };
 
 function render() {
-    console.log(_model.get());
-    $('.wrapper').html(dateTemplate({ data: _model.get() }));
+    _model.get().forEach((data) => {
+        DatesView.init(data);
+    });
 }
 
 function onDateClickHandler(e) {

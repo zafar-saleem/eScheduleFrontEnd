@@ -1,4 +1,11 @@
 body {
+    padding: 0;
+    margin: 0;
     background-color: #365b88;
     font-family: Sans-serif, Arial;
+
+    .wrapper {
+        width: 800px;
+        margin: 0 auto;
+    }
 }

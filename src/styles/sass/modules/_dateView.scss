@@ -1,8 +1,9 @@
 .m-dateview {
+    display: inline-block;
     position: relative;
     width: 60%;
-    height: 100%;
     border-radius: 50px;
+    margin-right: 10%;
     padding: 20px;
     width: 58px;
     z-index: 1;
@@ -14,7 +15,7 @@
         top: 41px;
         left: 49px;
         z-index: -1;
-        border-left: 1px solid #FFFFFF;
+        border: 1px solid #3a587c;
     }
 
     .m-dates {
@@ -22,7 +23,7 @@
 
         a {
             display: block;
-            color: #FFFFFF;
+            color: #528fbc;
             padding: 10px;
             text-decoration: none;
             font-size: 11px;
@@ -45,6 +46,8 @@
             }
 
             &.active {
+                color: #FFFFFF;
+                box-shadow: 0 0 4px inset #12407c;
                 background-color: #f8c255;
             }
         }

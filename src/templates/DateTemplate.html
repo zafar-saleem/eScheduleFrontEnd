@@ -1,11 +1,13 @@
-<div class="m-dateview">
-    <% _.each(data, function(d) { %>
+<!-- <div class="m-dateview"> -->
+    <div class="linker"></div>
+    
         <div class="m-dates">
-            <a href="#" class="a-date">
-                <span class="month"><%= d.month %></span>
-                <span class="day"><%= d.day %></span>
-                <span class="year"><%= d.year %></span>
+            <a href="#" class="a-date <% if (data.id == 4) { %>active<% } %>">
+                <span class="month"><%= data.month %></span>
+                <span class="day"><%= data.day %></span>,
+                <span class="year"><%= data.year %></span>
             </a>
         </div>
-    <% }) %>
-</div>
+    
+<!-- </div> -->
+

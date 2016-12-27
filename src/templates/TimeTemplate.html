@@ -1,4 +1,10 @@
 <div class="m-timeview">
+    <div class="time-title">
+        <input type="radio" name="btn-period">
+        <label>AM</label>
+        <label>PM</label>
+        <input type="radio" name="btn-period">
+    </div>
     <% _.each(data, function(d) { %>
         <a href="#" class="time">
             <%= d.time %>

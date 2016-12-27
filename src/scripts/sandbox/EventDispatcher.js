@@ -2,20 +2,21 @@ let events = {};
 
 const EventDispatcher = {
 
-    dispatchEvent: (eventName, callback) => {
-        console.log(events);
+    dispatchEvent: (eventName, data) => {
+        if (!eventName) return;
+
+        for (let key in events) {
+            if (events.hasOwnProperty(eventName) && key === eventName) {
+                events[eventName](data);
+            }
+        }
+    },
+
+    listenEvent: (eventName, callback) => {
         if (!eventName) return;
         if (!callback && typeof callback !== 'function') return;
 
         events[eventName] = callback;
-        console.log(events);
-    },
-
-    listenEvent: (eventName, data) => {
-        if (!eventName) return;
-        if (!events.hasOwnProperty(eventName)) return;
-
-        events[eventName](data);
     }
 };
 

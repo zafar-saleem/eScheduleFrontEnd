@@ -20,8 +20,12 @@ function render() {
     $('.wrapper').append(timeTemplate({ data: _model.get() }));
 }
 
-function callback() {
-    console.log('CALLBACK');
+function callback(data) {
+    console.log(data);
+    // let el = $(e.target);
+
+    $('.a-date').removeClass('active');
+    data.el.addClass('active');
 }
 
 module.exports = TimeView;

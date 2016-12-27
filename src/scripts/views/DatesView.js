@@ -6,6 +6,7 @@ import DateTemplate from '../../templates/DateTemplate.html';
 let dateTemplate = _.template(DateTemplate);
 
 let _model;
+let _isEventCalled = true;
 
 const DatesView = {
     init: (model) => {
@@ -21,8 +22,10 @@ function render() {
     $('.m-dateview').append(dateTemplate({ data: _model }));
 }
 
-function onDateClickHandler() {
-    window.Vents.dispatchEvent('dateSelected', _model.id);
+function onDateClickHandler(e) {
+    _model['el'] = $(e.target);
+    window.Vents.dispatchEvent('dateSelected', _model);
+    e.preventDefault();
 }
 
 module.exports = DatesView;
